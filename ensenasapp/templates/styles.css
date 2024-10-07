@@ -50,8 +50,13 @@ p {
     padding-bottom: 1rem;
 }
 
+img {
+    width: 100%;
+    padding-bottom: 1 rem;
+}
+
 header {
-    padding: 2rem 4rem 2rem;
+    padding: 1rem 4rem 1rem;
     background-image: linear-gradient(to right,#FFD60A, #EA5A0C);
 }
 
@@ -62,8 +67,8 @@ header {
 }
 
 .navlogo img{
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     cursor: pointer;
 }
 
@@ -72,16 +77,39 @@ header {
     padding-left: 4rem;
 }
 
+main {
+    padding: 4rem 4rem 4rem;
+}
+
+.cont1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.textstart {
+    flex: 0 0 60%;
+    margin-right: 10%;
+}
+
+.imagestart {
+    flex: 0 0 30%;
+
+}
+
 @media (max-width: 768px){
     .navbar {
         flex-direction: column;
     }
 
     .navlinks li {
-        padding: 2rem 2rem 0rem 2rem;
+        padding: 1rem 2rem 1rem 2rem;
     }
-}
 
-main {
-    padding: 2rem 4rem 2rem;
+    .cont1 {
+        flex-direction: column;
+    }
+
+    .imagestart {
+        order: -1;
+    }
 }
