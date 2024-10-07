@@ -11,52 +11,76 @@
 h1 {
     font-size: 40px;
     font-weight: 900;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
 h2 {
     font-size: 36px;
     font-weight: 800;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
 h3 {
     font-size: 32px;
     font-weight: 700;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
 h4 {
     font-size: 24px;
     font-weight: 600;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
 h5 {
     font-size: 20px;
     font-weight: 500;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
 h6 {
     font-size: 15px;
     font-weight: bold;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
 p {
     font-size: 15px;
     font-weight: 400;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
 img {
     width: 100%;
-    padding-bottom: 1 rem;
+    padding-bottom: 2 rem;
+}
+
+button {
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 1rem 6rem 1rem;
+    border-radius: 3rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.centertext {
+    text-align: center;
+}
+
+.purplebutton {
+    background-color: #7209B7;
+    color: white;
+}
+
+.yellowbutton {
+    background-color: #FFD60A;
+    color: black;
 }
 
 header {
-    padding: 1rem 4rem 1rem;
+    padding: 1rem 16rem 1rem;
     background-image: linear-gradient(to right,#FFD60A, #EA5A0C);
 }
 
@@ -78,12 +102,13 @@ header {
 }
 
 main {
-    padding: 4rem 4rem 4rem;
+    padding: 4rem 16rem 4rem;
 }
 
-.cont1 {
+.contintro {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 4rem;
 }
 
 .textstart {
@@ -96,7 +121,25 @@ main {
 
 }
 
+.continfo {
+    margin-bottom: 4rem;
+}
+
+.contteam {
+    margin-bottom: 4rem;  
+}
+
+footer {
+    padding: 1rem 16rem 1rem;
+    background-image: linear-gradient(to right,#FFD60A, #EA5A0C);
+}
+
 @media (max-width: 768px){
+    header, main, footer {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
     .navbar {
         flex-direction: column;
     }
@@ -105,7 +148,7 @@ main {
         padding: 1rem 2rem 1rem 2rem;
     }
 
-    .cont1 {
+    .contintro {
         flex-direction: column;
     }
 
