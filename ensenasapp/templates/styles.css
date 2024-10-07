@@ -127,7 +127,21 @@ main {
 }
 
 .contteam {
-    margin-bottom: 4rem;  
+    margin-bottom: 4rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.member {
+    flex: 1;
+    text-align: center;
+}
+
+.member p {
+    text-align: justify;
 }
 
 footer {
