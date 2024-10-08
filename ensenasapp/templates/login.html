@@ -4,13 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Inicio de Sesión</title>
-        <link rel="stylesheet" href="styles.css">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
     </head>
     <body>
         <header>
             <nav class="navbar">
                 <a href="start.html" class="navlogo">
-                    <img src="../images/logo.jpg" alt="Logo de EnSeñas">
+                    <img src="{% static '/logo.jpg' %}" alt="Logo de EnSeñas">
                 </a>
                 <ul class="navlinks">
                     <li><a href="#">Contacto</a></li>
@@ -23,9 +24,9 @@
         </main>
         <footer>
             <div class="footersocialmedia">
-                <a href="#"><img src="../images/instagram.png" alt="Instagram"></a>
-                <a href="#"><img src="../images/linkedin.png" alt="LinkedIn"></a>
-                <a href="#"><img src="../images/youtube.png" alt="YouTube"></a>
+                <a href="#"><img src="{% static '/instagram.png' %}" alt="Instagram"></a>
+                <a href="#"><img src="{% static '/linkedin.png' %}" alt="LinkedIn"></a>
+                <a href="#"><img src="{% static '/youtube.png' %}" alt="YouTube"></a>
             </div>
             <div class="footersection">
                 <h5>Sobre nosotros</h5>
