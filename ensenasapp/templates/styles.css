@@ -127,7 +127,6 @@ main {
 }
 
 .contteam {
-    margin-bottom: 4rem;
     text-align: center;
     display: flex;
     justify-content: space-around;
@@ -138,6 +137,10 @@ main {
 .member {
     flex: 1;
     text-align: center;
+}
+
+.member img {
+    border-radius: 50%;
 }
 
 .member p {
