@@ -50,9 +50,13 @@ p {
     padding-bottom: 2rem;
 }
 
+a {
+    text-decoration: none;
+}
+
 img {
     width: 100%;
-    padding-bottom: 2 rem;
+    padding-bottom: 2rem;
 }
 
 button {
@@ -95,6 +99,7 @@ header {
     width: 60px;
     border-radius: 50%;
     cursor: pointer;
+    padding-bottom: 0;
 }
 
 .navlinks li {
@@ -161,7 +166,6 @@ footer {
 }
 
 .footersection ul li a{
-    text-decoration: none;
     color: black;
     font-size: 15px;
 }
