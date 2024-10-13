@@ -15,7 +15,7 @@
         <header>
             <nav class="navbar">
                 <a href="start.html" class="navlogo">
-                    <img src="{% static '/logo.jpg' %}" alt="Logo de EnSeñas">
+                    <img src="{% static 'logo.jpg' %}" alt="Logo de EnSeñas">
                 </a>
                 <ul class="navlinks">
                     <li><a href="#">Ayuda</a></li>
@@ -30,52 +30,60 @@
                     <h5>Aprende lengua de señas y conecta con el mundo.</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget purus leo. Etiam quis ante mauris. Curabitur varius tristique dignissim. Cras malesuada magna ipsum, quis efficitur augue lacinia non. Aliquam facilisis hendrerit velit ut sagittis.</p>
                     <div class="centertext">
-                        <button class="purplebutton">Comenzar hoy</button>
+                        <a class="purplebutton" href="{% url 'register' %}">
+                            <span>Comenzar hoy</span>
+                        </a>
                     </div>
                 </div>
                 <div class="imagestart">
-                    <img src="{% static '/pet.png' %}" alt="Imagen de la mascota">
+                    <img src="{% static 'pet.png' %}" alt="Imagen de la mascota">
                 </div>
             </div>
             <div class="continfo">
                 <h1>¿Qué es EnSeñas?</h1>
 
             </div>
+            <h1 class="centertext">Proyecto universitario</h1>
             <div class="contsupp">
-                <h1 class="centertext">Proyecto universitario</h1>
-                <div class="supported">
-                    <img src="{% static '/utfsm' %}" alt="Logo de la Universidad Técnica Federico Santa María">
-                    <h3>Universidad Técnica Federico Santa María</h3>
-                    <p>Estamos contando con el valioso apoyo del equipo de inclusión para el desarrollo de nuestro aplicación web en el ramo "Introducción a la Ingeniería" durante nuestro primer año. Su respaldo nos permite avanzar de manera más inclusiva y completa, lo cual es fundamental para el éxito de nuestra iniciativa.</p>
-                    <img src="{% static '/is' %}" alt="Logo del Instituto de la Sordera">
-                    <h3>Instituto de la Sordera</h3>
-                    <p>Estamos respaldados por el Instituto de la Sordera, una Corporación de Derecho Privado sin fines de lucro que se dedica a garantizar que las personas sordas tengan acceso total a las oportunidades y sean respetadas, valoradas y aceptadas en su dignidad y diferencia. El Instituto es un centro de referencia tanto a nivel nacional como internacional, reconocido por su enfoque en la educación y atención integral de las personas sordas bajo un paradigma Intercultural Bilingüe.</p>
+                <div class="supportr">
+                    <img src="{% static 'utfsm.png' %}" alt="Logo de la Universidad Técnica Federico Santa María">
+                    <div class="supptext">
+                        <h3>Universidad Técnica Federico Santa María</h3>
+                        <p>Estamos contando con el valioso apoyo del equipo de inclusión para el desarrollo de nuestro aplicación web en el ramo "Introducción a la Ingeniería" durante nuestro primer año. Su respaldo nos permite avanzar de manera más inclusiva y completa, lo cual es fundamental para el éxito de nuestra iniciativa.</p>
+                    </div>
+                </div>
+                <div class="supportl">
+                    <img src="{% static 'is.png' %}" alt="Logo del Instituto de la Sordera">
+                    <div class="supptext">
+                        <h3>Instituto de la Sordera</h3>
+                        <p>Estamos respaldados por el Instituto de la Sordera, una Corporación de Derecho Privado sin fines de lucro que se dedica a garantizar que las personas sordas tengan acceso total a las oportunidades y sean respetadas, valoradas y aceptadas en su dignidad y diferencia. El Instituto es un centro de referencia tanto a nivel nacional como internacional, reconocido por su enfoque en la educación y atención integral de las personas sordas bajo un paradigma Intercultural Bilingüe.</p>
+                    </div>
                 </div>
             </div>
             <h1 class="centertext">Nuestro equipo</h1>
             <div class="contteam">
                 <div class="member">
-                    <img src="{% static '/belen.png' %}" alt="Fotografía de Belén Aravena">
+                    <img src="{% static 'belen.png' %}" alt="Fotografía de Belén Aravena">
                     <h3>Belén<br>Aravena</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget purus leo. Etiam quis ante mauris. Curabitur varius tristique dignissim. Cras malesuada magna ipsum, quis efficitur augue lacinia non. Aliquam facilisis hendrerit velit ut sagittis.</p>
                 </div>
                 <div class="member">
-                    <img src="{% static '/catalina.png' %}" alt="Fotografía de Catalina Astorga">
+                    <img src="{% static 'catalina.png' %}" alt="Fotografía de Catalina Astorga">
                     <h3>Catalina<br>Astorga</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget purus leo. Etiam quis ante mauris. Curabitur varius tristique dignissim. Cras malesuada magna ipsum, quis efficitur augue lacinia non. Aliquam facilisis hendrerit velit ut sagittis.</p>
                 </div>
                 <div class="member">
-                    <img src="{% static '/domingo.png' %}" alt="Fotografía de Domingo Armijo">
+                    <img src="{% static 'domingo.png' %}" alt="Fotografía de Domingo Armijo">
                     <h3>Domingo<br>Armijo</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget purus leo. Etiam quis ante mauris. Curabitur varius tristique dignissim. Cras malesuada magna ipsum, quis efficitur augue lacinia non. Aliquam facilisis hendrerit velit ut sagittis.</p>
                 </div>
                 <div class="member">
-                    <img src="{% static '/emilio.png' %}" alt="Fotografía de Emilio Araya">
+                    <img src="{% static 'emilio.png' %}" alt="Fotografía de Emilio Araya">
                     <h3>Emilio<br>Araya</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget purus leo. Etiam quis ante mauris. Curabitur varius tristique dignissim. Cras malesuada magna ipsum, quis efficitur augue lacinia non. Aliquam facilisis hendrerit velit ut sagittis.</p>
                 </div>
                 <div class="member">
-                    <img src="{% static '/vicente.png' %}" alt="Fotografía de Vicente Araya">
+                    <img src="{% static 'vicente.png' %}" alt="Fotografía de Vicente Araya">
                     <h3>Vicente<br>Araya</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget purus leo. Etiam quis ante mauris. Curabitur varius tristique dignissim. Cras malesuada magna ipsum, quis efficitur augue lacinia non. Aliquam facilisis hendrerit velit ut sagittis.</p>
                 </div>

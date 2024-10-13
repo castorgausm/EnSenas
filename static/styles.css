@@ -58,9 +58,20 @@ a {
 img {
     width: 100%;
     padding-bottom: 2rem;
+    max-width: 300px;
+    height: auto;
 }
 
-button {
+.centertext {
+    text-align: center;
+}
+
+.purplebutton span, .yellowbutton span {
+    position: relative;
+    z-index: 1;
+}
+
+.purplebutton {
     border: none;
     font-size: 15px;
     font-weight: bold;
@@ -71,38 +82,60 @@ button {
     transition: transform 0.3s ease;
     overflow: hidden;
     position: relative;
+    text-align: center;
+    background-color: #7209B7;
+    color: white;
+    display: inline-block;
 }
 
-button::before {
+.purplebutton::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: black;
+    opacity: 20%;
+    transition: left 0.5s ease;
+    z-index: 0;
+}
+
+.purplebutton:hover::before {
+    left: 0;
+}
+
+.yellowbutton {
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 1rem 6rem 1rem;
+    border-radius: 3rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    background-color: #FFD60A;
+    color: black;
+    display: inline-block;
+}
+
+.yellowbutton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
     opacity: 20%;
     transition: left 0.5s ease;
 }
 
-button:hover::before {
+.yellowbutton:hover::before {
     left: 0;
-}
-
-.centertext {
-    text-align: center;
-}
-
-.purplebutton {
-    background-color: #7209B7;
-    color: white;
-    display: inline-block;
-}
-
-.yellowbutton {
-    background-color: #FFD60A;
-    color: black;
-    display: inline-block;
 }
 
 header {
@@ -149,7 +182,6 @@ main {
 
 .imagestart {
     flex: 0 0 30%;
-    min-width: 300px;
 }
 
 .continfo {
@@ -158,6 +190,32 @@ main {
 
 .contsupp {
     margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.supportr, .supportl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.supportr img, .supportl img {
+    width: 200px;
+    height: 200px;
+    margin: 0 2rem 0 2rem;
+}
+
+.supportr {
+    flex-direction: row;
+}
+
+.supptext p {
+    text-align: justify;
+}
+
+.supportl {
+    flex-direction: row-reverse;
 }
 
 .contteam {
@@ -175,7 +233,6 @@ main {
 
 .member img {
     border-radius: 50%;
-    max-width: 300px;
 }
 
 .member p {
@@ -210,7 +267,7 @@ footer {
 }
 
 .footersocialmedia a img {
-    width: 32px;
+    width: 24px;
     margin-bottom: 1rem;
     padding-bottom: 0;
 }
@@ -241,7 +298,6 @@ footer {
 
     .imagestart {
         order: -1;
-        max-width: 300px;
         height: auto;
     }
 
