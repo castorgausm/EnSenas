@@ -52,6 +52,7 @@ p {
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 img {
@@ -67,6 +68,25 @@ button {
     border-radius: 3rem;
     text-transform: uppercase;
     cursor: pointer;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 20%;
+    transition: left 0.5s ease;
+}
+
+button:hover::before {
+    left: 0;
 }
 
 .centertext {
@@ -76,16 +96,20 @@ button {
 .purplebutton {
     background-color: #7209B7;
     color: white;
+    display: inline-block;
 }
 
 .yellowbutton {
     background-color: #FFD60A;
     color: black;
+    display: inline-block;
 }
 
 header {
     padding: 1rem 16rem 1rem;
     background-image: linear-gradient(to right,#FFD60A, #EA5A0C);
+    background-size: 200% 100%;
+    animation: gradientmove 8s linear infinite;
 }
 
 .navbar {
@@ -120,11 +144,12 @@ main {
 .textstart {
     flex: 0 0 60%;
     margin-right: 10%;
+    display: inline-block;
 }
 
 .imagestart {
     flex: 0 0 30%;
-
+    min-width: 300px;
 }
 
 .continfo {
@@ -159,6 +184,8 @@ footer {
     justify-content: space-around;
     flex-wrap: wrap;
     text-align: left;
+    background-size: 400% 400%;
+    animation: gradientmove 8s linear infinite;
 }
 
 .footersection {
@@ -245,4 +272,16 @@ footer {
         margin-bottom: 0;
     }
     
+}
+
+@keyframes gradientmove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
