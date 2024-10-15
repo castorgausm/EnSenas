@@ -3,9 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Inicio</title>
+        <title>{% block title %}{% endblock %}</title>
         {% load static %}
-        <link rel="stylesheet" href="{% static 'styles.css' %}">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="icon" href="{% static 'images/logo.jpg' %}" type="image/jpg">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -14,22 +15,21 @@
         <header>
             <nav class="navbar">
                 <a href="start.html" class="navlogo">
-                    <img src="{% static '/logo.jpg' %}" alt="Logo de EnSeñas">
+                    <img src="{% static 'images/logo.jpg' %}" alt="Logo de EnSeñas">
                 </a>
                 <ul class="navlinks">
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Iniciar Sesión</a></li>
+                    {% block navlinks %}{% endblock %}
                 </ul>
             </nav>
         </header>
         <main>
-
+            {% block main %}{% endblock %}
         </main>
         <footer>
             <div class="footersocialmedia">
-                <a href="#"><img src="{% static '/instagram.png' %}" alt="Instagram"></a>
-                <a href="#"><img src="{% static '/linkedin.png' %}" alt="LinkedIn"></a>
-                <a href="#"><img src="{% static '/youtube.png' %}" alt="YouTube"></a>
+                <a href="#"><img src="{% static 'images/instagram.png' %}" alt="Instagram"></a>
+                <a href="#"><img src="{% static 'images/linkedin.png' %}" alt="LinkedIn"></a>
+                <a href="#"><img src="{% static 'images/youtube.png' %}" alt="YouTube"></a>
             </div>
             <div class="footersection">
                 <h5>Sobre nosotros</h5>
