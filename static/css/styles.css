@@ -287,7 +287,16 @@ main {
     color: white;
     text-decoration: underline;
 }
-.backgrundpurple {}
+.backgroundpurple {
+    font-family: 'Lato', sans-serif;
+    background-image: url('image.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 footer {
     padding: 4rem 16rem 4rem;
     background-image: linear-gradient(to right,#FFD60A, #EA5A0C);
