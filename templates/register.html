@@ -12,14 +12,17 @@
 {% block main %}
 <div class="form-container">
     <img src="{% static 'images/pet.png' %}" alt="Mascota" class="mascota">
-    <form class="register-form">
+    <form class="register-form" method="POST">
+        {% csrf_token %}
         <h2>Registro</h2>
-        <input type="text" placeholder="Nombre" required>
-        <input type="text" placeholder="Apellido" required>
-        <input type="email" placeholder="Correo electronico" required>
-        <input type="password" placeholder="Contraseña" required>
+        <input type="text" name="first_name" placeholder="Nombre" required>
+        <input type="text" name="last_name" placeholder="Apellido" required>
+        <input type="text" name="username" placeholder="Nombre de Usuario" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <input type="password" name="confirm_password" placeholder="Confirmar Contraseña" required>
         <button type="submit">Registrarse</button>
-        <p><a href="#">Quiero iniciar sesión</a></p>
+        <p><a href="{% url 'login' %}">Quiero iniciar sesión</a></p>
     </form>
 </div>
 {% endblock %}
