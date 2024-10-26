@@ -242,7 +242,7 @@ main {
     position: relative;
 }
 
-.register-form {
+.forms{
     background: rgba(128, 0, 128, 0.8);
     margin-left: 4rem;
     padding: 3rem;
@@ -252,7 +252,7 @@ main {
     text-align: center;
 }
 
-.register-form input {
+.forms input {
     display: block;
     width: 90%;
     padding: 10px;
@@ -261,11 +261,11 @@ main {
     border: none;
 }
 
-.register-form p {
+.forms p {
     margin-top: 1rem;
 }
 
-.register-form a {
+.forms a {
     color: white;
     text-decoration: underline;
 }
