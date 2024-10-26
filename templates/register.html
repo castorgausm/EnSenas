@@ -12,7 +12,7 @@
 {% block main %}
 <div class="form-container">
     <img src="{% static 'images/pet.png' %}" alt="Mascota" class="mascota">
-    <form class="register-form" method="POST">
+    <form class="forms" method="POST">
         {% csrf_token %}
         <h2>Registro</h2>
         <input type="text" name="first_name" placeholder="Nombre" required>
