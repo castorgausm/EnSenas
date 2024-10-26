@@ -291,7 +291,7 @@ main {
 }
 
 .checkbox-container input[type="checkbox"] {
-    margin-right: 10px; /* Añade espacio entre el checkbox y el texto */
+    margin-right: 10px; 
 }
 
 .login-btn {
