@@ -270,6 +270,32 @@ main {
     text-decoration: underline;
 }
 
+.login-container {
+    background-color: rgba(153, 0, 153, 0.81); 
+    border-radius: 15px;
+    padding: 40px;
+    width: 350px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #fdd835; 
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
 footer {
     padding: 4rem 16rem 4rem;
     background-image: linear-gradient(to right,#FFD60A, #EA5A0C);
