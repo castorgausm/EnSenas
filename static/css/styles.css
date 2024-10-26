@@ -283,6 +283,16 @@ main {
     align-items: center;
     margin-bottom: 20px;
 }
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px; /* Añade espacio entre el checkbox y el texto */
+}
 
 .login-btn {
     width: 100%;
