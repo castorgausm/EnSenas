@@ -235,6 +235,74 @@ main {
     text-align: justify;
 }
 
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.forms{
+    background: rgba(128, 0, 128, 0.8);
+    margin-left: 4rem;
+    padding: 3rem;
+    border-radius: 3rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+}
+
+.forms input {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto 1rem auto;
+    border-radius: 3rem;
+    border: none;
+}
+
+.forms p {
+    margin-top: 1rem;
+}
+
+.forms a {
+    color: white;
+    text-decoration: underline;
+}
+
+.login-container {
+    background-color: rgba(153, 0, 153, 0.81); 
+    border-radius: 15px;
+    padding: 40px;
+    width: 350px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 2px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #fdd835; 
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
 footer {
     padding: 4rem 16rem 4rem;
     background-image: linear-gradient(to right,#FFD60A, #EA5A0C);

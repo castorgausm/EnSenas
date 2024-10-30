@@ -10,5 +10,19 @@
 {% endblock %}
 
 {% block main %}
-
+   <div class="form-container">
+    <form class="forms">
+        <h2>INICIO DE SESION</h2>
+        <input type="email" placeholder="Correo electrónico" required>
+        <input type="password" placeholder="Contraseña" required>
+        <div class="checkbox-container">
+            <input type="checkbox" id="remember">
+            <label for="remember">Recordar inicio de sesión</label>
+        </div>
+        <button class="yellowbutton" type="submit">Iniciar sesión</button>
+        <div class="register">
+            <p>¿No tienes una cuenta? <a href="{% url 'register' %}">Regístrate</a></p>
+        </div>
+    </form>
+</div> 
 {% endblock %}

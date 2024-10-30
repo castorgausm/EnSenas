@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <title>LOGROS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Begin your educational adventure with EnSeñas. Access your profile, start lessons, and track achievements. Dive into Lección 1 to Lección" />
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/Lessons.css' %}">
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% load static %}
+    
+{% block title %}Lecciones{% endblock %}
+
+<link rel="stylesheet" href="{% staticfiles 'admin/css/Lessons.css' %}">
+
+{% block navlinks %}
+    <li><a href="#">Ayuda</a></li>
+    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+{% endblock %}
+
+{% block main %}
     <div class="columnlogo_one-one">
         <header class="header-1">
             <div class="header_row-3">
@@ -54,25 +56,25 @@
                         <div class="logro_card">
                             <div class="icon_tooltip">
                                 <img src="{% static 'images/lengua.png' %}" alt="Logro 1" class="logro_icon">
-                                <span class="tooltip_text">Logro 1: Primeras 2 Lecciones Completadas</span>
+                                <span class="tooltip_text">Logro 1 Primeras 2 Lecciones Completadas</span>
                             </div>
                         </div>
                         <div class="logro_card">
                             <div class="icon_tooltip">
                                 <img src="{% static 'images/lengua.png' %}" alt="Logro 2" class="logro_icon">
-                                <span class="tooltip_text">Logro 2: 4 Lecciones Completadas</span>
+                                <span class="tooltip_text">Logro 2 4 Lecciones Completadas</span>
                             </div>
                         </div>
                         <div class="logro_card">
                             <div class="icon_tooltip">
                                 <img src="{% static 'images/lengua.png' %}" alt="Logro 1" class="logro_icon">
-                                <span class="tooltip_text">Logro 3: 6 Lecciones Completadas</span>
+                                <span class="tooltip_text">Logro 3 6 Lecciones Completadas</span>
                             </div>
                         </div>
                         <div class="logro_card">
                             <div class="icon_tooltip">
                                 <img src="{% static 'images/lengua.png' %}" alt="Logro 2" class="logro_icon">
-                                <span class="tooltip_text">Logro 4: Haber leído todos los recursos</span>
+                                <span class="tooltip_text">Logro 4 Haber leído todos los recursos</span>
                             </div>
                         </div>
                     </div>
@@ -81,5 +83,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+{% endblock %}

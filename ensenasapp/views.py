@@ -14,13 +14,13 @@ def lesson_view(request):
 
 def register_view(request):
     if request.method == 'POST':
-        firstname = request.POST['first_name']
-        lastname = request.POST['last_name', '']
-        username = request.POST['username']
-        email = request.POST['email']
-        password = request.POST['password']
-        confirmpassword = request.POST['confirm_password']
-    
+        firstname = request.POST.get('first_name', '')  
+        lastname = request.POST.get('last_name', '')
+        username = request.POST.get('username', '')
+        email = request.POST.get('email', '')
+        password = request.POST.get('password', '')
+        confirmpassword = request.POST.get('confirm_password', '')
+        
         if password == confirmpassword:
             if User.objects.filter(email=email).exists():
                 messages.error(request, 'El correo ya está registrado.')
@@ -37,7 +37,7 @@ def register_view(request):
                 user.save()
 
                 user = authenticate(request, username=username, password=password)
-                
+            
                 if user is not None:
                     login(request, user)
                     messages.success(request, 'Registrado con éxito.')
