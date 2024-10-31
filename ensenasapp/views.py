@@ -12,6 +12,9 @@ def home_view(request):
 def lesson_view(request):
     return render(request, 'lesson.html')
 
+def profile_view(request): 
+    return render(request, 'profile.html')
+
 def register_view(request):
     if request.method == 'POST':
         firstname = request.POST.get('first_name', '')  
