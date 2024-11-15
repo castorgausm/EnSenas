@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'usuarios',
     'ensenasapp',
+    "lessons",
 ]
 
 MIDDLEWARE = [
