@@ -1,0 +1,36 @@
+.profile-container {
+    display: flex;
+    max-width: 900px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.achievements {
+    flex: 1;
+    background-color: #FFD60A;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.achievements-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+
+.achievement-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}

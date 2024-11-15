@@ -15,4 +15,5 @@ urlpatterns = [
     path('home/', views.home_view, name='home'),
     path('lesson/', views.lesson_view, name='lesson'),
     path('profile/', views.profile_view, name='profile'), 
+    path('lessons/', views.lessons_view, name='lessons'),
 ]

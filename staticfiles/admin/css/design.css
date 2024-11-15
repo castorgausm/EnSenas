@@ -1,0 +1,132 @@
+/*lessons*/
+.ui.heading.size-headinglg {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center; /* Centrar el título */
+}
+
+.content_lessons {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Centrar la columna */
+}
+
+.content_main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* Centrar la columna */
+}
+
+
+.heading-title {
+    font-family: Arial, sans-serif; 
+    font-size: 2rem; 
+    font-weight: bold; 
+    color: black; 
+    text-align: center; 
+    margin-bottom: 1rem; 
+    margin-top: 0; 
+}
+
+/*lessons*/
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f3;
+}
+
+/* Contenedor principal */
+.content-lessons {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.lessons-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 800px;
+}
+
+.lesson {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lesson h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Botón activo */
+.lesson .active button {
+    background-color: #FFD60A;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+}
+
+.lesson .active button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 20%;
+    transition: left 0.5s ease;
+}
+
+/* Efecto de hover en el botón activo */
+.lesson .active button:hover {
+    left: 0;
+}
+
+/* Botón bloqueado */
+.lesson.locked button,
+.lesson button:disabled {
+    background-color: #e0e0e0;
+    color: #aaa;
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    cursor: not-allowed;
+}
+

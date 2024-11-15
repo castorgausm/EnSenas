@@ -12,8 +12,12 @@ def home_view(request):
 def lesson_view(request):
     return render(request, 'lesson.html')
 
-def profile_view(request): 
-    return render(request, 'profile.html')
+def profile_view(request):
+    user = request.user if request.user.is_authenticated else None
+    return render(request, 'profile.html', {'user': user})
+
+def lessons_view(request):
+    return render(request, 'lessons.html')
 
 def register_view(request):
     if request.method == 'POST':

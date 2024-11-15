@@ -1,56 +1,46 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
-{% block title %}Perfil{% endblock %}
+{% block title %}Perfil de Usuario{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock %}
 
 {% block navlinks %}
     <li><a href="#">Ayuda</a></li>
     <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+    <li><a href="{% url 'profile' %}">Perfil</a></li>
+    <li><a href="{% url 'lessons' %}">Lecciones</a></li>
 {% endblock %}
 
 {% block main %}
-    <div class="contintro">
-        <div class="profile-container">
-            <div class="profile-left">
-                <div class="profile-image">
-                    <img src="{% static 'images/profile_placeholder.png' %}" alt="Foto de perfil del usuario">
-                </div>
-                <div class="profile-info">
-                    <h2>Nombre del Usuario</h2>
-                    <p>usuario@gmail.com</p>
-                    <p>Información adicional del usuario</p>
-                </div>
-            </div>
-            <div class="profile-right">
-                <div class="content_logros">
-                    <h2 class="content_subtitle ui heading size-headinglg">LOGROS:</h2>
-                    <div class="logro_card">
-                        <div class="icon_tooltip">
-                            <img src="{% static 'images/lengua.png' %}" alt="Logro 1" class="logro_icon">
-                            <span class="tooltip_text">Logro 1 Primeras 2 Lecciones Completadas</span>
-                        </div>
-                    </div>
-                    <div class="logro_card">
-                        <div class="icon_tooltip">
-                            <img src="{% static 'images/lengua.png' %}" alt="Logro 2" class="logro_icon">
-                            <span class="tooltip_text">Logro 2 4 Lecciones Completadas</span>
-                        </div>
-                    </div>
-                    <div class="logro_card">
-                        <div class="icon_tooltip">
-                            <img src="{% static 'images/lengua.png' %}" alt="Logro 1" class="logro_icon">
-                            <span class="tooltip_text">Logro 3 6 Lecciones Completadas</span>
-                        </div>
-                    </div>
-                    <div class="logro_card">
-                        <div class="icon_tooltip">
-                            <img src="{% static 'images/lengua.png' %}" alt="Logro 2" class="logro_icon">
-                            <span class="tooltip_text">Logro 4 Haber leído todos los recursos</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="profile-container">
+    <div class="profile-info">
+        <div class="profile-overlay">
+            <img src="{% static 'images/perfil.jpg' %}" alt="User Icon" class="profile-pic">
+            {% if user %}
+                <h1 class="username">{{ user.username }}</h1>
+                <p class="user-email">{{ user.email }}</p>
+                <p class="user-info">Información adicional del usuario</p>
+            {% else %}
+                <h1 class="username">Usuario Anónimo</h1>
+                <p class="user-email">correo@ejemplo.com</p>
+                <p class="user-info">Por favor, inicia sesión para ver tu información.</p>
+            {% endif %}
         </div>
     </div>
+    
+    <div class="achievements">
+        <h2>LOGROS:</h2>
+        <div class="achievements-list">
+            <img src="{% static 'images/lengua.png' %}" alt="Logro 1" class="achievement-icon">
+            <img src="{% static 'images/lengua.png' %}" alt="Logro 2" class="achievement-icon">
+            <img src="{% static 'images/lengua.png' %}" alt="Logro 3" class="achievement-icon">
+            <img src="{% static 'images/lengua.png' %}" alt="Logro 4" class="achievement-icon">
+            <img src="{% static 'images/lengua.png' %}" alt="Logro 5" class="achievement-icon">
+            <img src="{% static 'images/lengua.png' %}" alt="Logro 6" class="achievement-icon">
+        </div>
+    </div>
+</div>
 {% endblock %}

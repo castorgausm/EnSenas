@@ -410,3 +410,123 @@ footer {
         background-position: 0% 50%;
     }
 }
+
+
+.lessons-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 800px;
+}
+
+.lesson {
+    background-color: #fff;
+    border: 1px solid #58054d;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lesson h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.lesson .active button {
+    background-color: #FFD60A;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+}
+
+.lesson .active button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 20%;
+    transition: left 0.5s ease;
+}
+
+/* Efecto de hover en el botón activo */
+.lesson .active button:hover {
+    left: 0;
+}
+
+.lesson.locked button,
+.lesson button:disabled {
+    background-color: #e0e0e0;
+    color: #aaa;
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    cursor: not-allowed;
+}
+
+/*profile*/ 
+
+.profile-container {
+    display: flex;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.profile-overlay {
+    background-color: rgba(114, 9, 183, 0.8); /* Morado con opacidad */
+    padding: 20px;
+    border-radius: 8px;
+    color: white; /* Texto blanco */
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid white; /* Borde blanco */
+    margin-bottom: 20px;
+}
+
+.username, .user-email, .user-info {
+    color: white; /* Texto blanco */
+}
+
+.achievements {
+    flex: 1;
+    border: 2px solid #FFD60A;;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.achievements-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+
+.achievement-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+}
