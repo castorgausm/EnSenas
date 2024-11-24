@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Lección 3{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
+{% block navlinks %}
+    <li><a href="#">Ayuda</a></li>
+    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+    <li><a href="{% url 'profile' %}">Perfil</a></li>
+    <li><a href="{% url 'lessons' %}">Lecciones</a></li>
+{% endblock %}
+
+{% block main %}
+    <div class="row_five">
+        <div class="content">
+            <div class="content-main">
+                <h1>Bienvenido a la Lección 3</h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}

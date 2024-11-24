@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Lección 2{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
+{% block navlinks %}
+    <li><a href="#">Ayuda</a></li>
+    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+    <li><a href="{% url 'profile' %}">Perfil</a></li>
+    <li><a href="{% url 'lessons' %}">Lecciones</a></li>
+    <script src="{% static 'js/lesson_2.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="row_five">
+        <div class="content">
+            <div class="content-main">
+                <ul>
+                    {% for imagen in lesson_images %}
+                        <li><img src="{{imagen.image.url}}"></li>
+                    {% endfor %}
+                </ul>
+                <p>{{ lesson.question }}</p>
+                <p>{{ lesson.response }}</p>
+                <div class="container">
+                    <div class="instructions" id="instructionsContainer">
+                    </div>
+                    <button id="checkOrderButton" class="yellowbutton">Verificar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-container">
+        <div class="word-container" id="wordContainer">
+            <div class="word" id="word1" draggable="true">Palabra1</div>
+            <div class="word" id="word2" draggable="true">Palabra2</div>
+            <div class="word" id="word3" draggable="true">Palabra3</div>
+            <div class="word" id="word4" draggable="true">Palabra4</div>
+        </div>
+        <a href="{% url 'lesson_3' %}" id="accessLesson3Button" class="yellowbutton hide">Acceder a Lección 3</a>
+    </div>
+    <audio id="errorSound" src="{% static 'sounds/error-sound.mp3' %}" preload="auto"></audio>
+    <audio id="correctSound" src="{% static 'sounds/correct-sound.mp3' %}" preload="auto"></audio>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/lesson_2.js' %}"></script>
+{% endblock %}
