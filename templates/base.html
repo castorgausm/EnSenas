@@ -19,7 +19,17 @@
                     <img src="{% static 'images/logo.jpg' %}" alt="Logo de EnSeñas">
                 </a>
                 <ul class="navlinks">
-                    {% block navlinks %}{% endblock %}
+                    {% block navlinks %}
+                        <li><a href="#">Ayuda</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'profile' %}">Perfil</a></li>
+                            <li><a href="{% url 'lessons' %}">Lecciones</a></li>
+                            <li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+                            <li><a href="{% url 'register' %}">Regístrate</a></li>
+                        {% endif %}
+                    {% endblock %}
                 </ul>
             </nav>
         </header>

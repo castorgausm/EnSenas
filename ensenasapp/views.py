@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 def start_view(request):
     return render(request, 'start.html')
@@ -12,10 +13,12 @@ def home_view(request):
 def lesson_view(request):
     return render(request, 'lesson.html')
 
+@login_required
 def profile_view(request):
     user = request.user if request.user.is_authenticated else None
     return render(request, 'profile.html', {'user': user})
 
+@login_required
 def lessons_view(request):
     return render(request, 'lessons.html')
 
@@ -48,13 +51,8 @@ def register_view(request):
                     password=password
                 )
                 user.save()
-
-                user = authenticate(request, username=username, password=password)
-            
-                if user is not None:
-                    login(request, user)
-                    messages.success(request, 'Registrado con éxito.')
-                    return redirect('home')
+                messages.success(request, 'Registrado con éxito. Por favor, inicia sesión.')
+                return redirect('login')  # Redirige a la página de inicio de sesión
         else:
             messages.error(request, 'Las contraseñas no coinciden.')
     return render(request, 'register.html')
@@ -67,7 +65,7 @@ def login_view(request):
 
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return redirect('home')  # Redirige a la página "home"
         else:
             messages.error(request, 'Datos incorrectos.')
     return render(request, 'login.html')

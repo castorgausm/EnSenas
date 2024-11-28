@@ -5,7 +5,7 @@ from lessons.models import Lesson, LessonImage
 
 def detail(request, number):
     try:
-        l = Lesson.objects.get(pk=number)
+        l = Lesson.objects.get(number=number)
     except Lesson.DoesNotExist:
         raise Http404("Lesson does not exist")
     
