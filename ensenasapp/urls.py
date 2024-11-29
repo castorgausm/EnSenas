@@ -12,7 +12,6 @@ urlpatterns = [
     path('home/', views.home_view, name='home'),
     path('lesson/', views.lesson_view, name='lesson'),
     path('profile/', views.profile_view, name='profile'), 
-    path('lessons/', views.lessons_view, name='lessons'),
     path('lecciones/2', views.lesson_2, name='lesson_2'),
     path('lecciones/3/', views.lesson_3, name='lesson_3'),
     path("lecciones/", include("lessons.urls")),

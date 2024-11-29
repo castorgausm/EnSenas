@@ -4,6 +4,9 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
+
+from lessons.utils import inscribir_usuario
+
 def start_view(request):
     return render(request, 'start.html')
 
@@ -52,6 +55,8 @@ def register_view(request):
                 )
                 user.save()
                 messages.success(request, 'Registrado con éxito. Por favor, inicia sesión.')
+                inscribir_usuario(user)
+
                 return redirect('login')  # Redirige a la página de inicio de sesión
         else:
             messages.error(request, 'Las contraseñas no coinciden.')

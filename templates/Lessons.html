@@ -11,7 +11,7 @@
     <li><a href="#">Ayuda</a></li>
     <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
     <li><a href="{% url 'profile' %}">Perfil</a></li>
-    <li><a href="{% url 'lessons' %}">Lecciones</a></li>
+    <li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
 {% endblock %}
 
 {% block main %}
@@ -21,30 +21,17 @@
                 <div class="content-lessons">
                     <h1 class="heading-title">Lecciones:</h1>
                     <div class="lessons-container">
-                        <div class="lesson">
-                            <h3>LECCIÓN 1</h3>
-                            <button class="lesson active"><a href="/lecciones/1">Iniciar</a></button>
+                        {% for lesson in lessons %}
+                            <div class="lesson">
+                            <h3>LECCIÓN {{lesson.lesson.number}}</h3>
+                            {% if lesson.finished%}
+                            <button class="terminada"><a href="{% url 'lesson_detail' number=lesson.lesson.number %}">Terminada</a></button>
+                            {% else %}
+                            <button class="lesson active"><a href="{% url 'lesson_detail' number=lesson.lesson.number %}">Ir</a></button>
+                            {% endif %}
                         </div>
-                        <div class="lesson">
-                            <h3>LECCIÓN 2</h3>
-                            <button class="lesson active"><a href="{% url 'lesson_2' %}">Iniciar</a></button>
-                        </div>
-                        <div class="lesson locked">
-                            <h3>LECCIÓN 3</h3>
-                            <button disabled>Bloqueado</button>
-                        </div>
-                        <div class="lesson locked">
-                            <h3>LECCIÓN 4</h3>
-                            <button disabled>Bloqueado</button>
-                        </div>
-                        <div class="lesson locked">
-                            <h3>LECCIÓN 5</h3>
-                            <button disabled>Bloqueado</button>
-                        </div>
-                        <div class="lesson locked">
-                            <h3>LECCIÓN 6</h3>
-                            <button disabled>Bloqueado</button>
-                        </div>
+                        {% endfor %}
+                        
                     </div>
                 </div>
             </div>
