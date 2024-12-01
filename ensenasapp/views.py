@@ -16,6 +16,9 @@ def home_view(request):
 def lesson_view(request):
     return render(request, 'lesson.html')
 
+def manual_view(request):
+    return render(request, 'manual.html')
+
 @login_required
 def profile_view(request):
     user = request.user if request.user.is_authenticated else None
