@@ -10,6 +10,7 @@
 {% block navlinks %}
     <li><a href="#">Ayuda</a></li>
     <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+    <li><a href="{% url 'manual' %}">Manual</a></li>
     <li><a href="{% url 'profile' %}">Perfil</a></li>
     <li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
     <script src="{% static 'js/lesson_2.js' %}"></script>
@@ -20,8 +21,13 @@
         <div class="content">
             <div class="content-main">
                 <ul>
-                    {% for imagen in lesson_images %}
-                        <li><img src="{{imagen.image.url}}"></li>
+                    {% for video in lesson_videos %}
+                        <li>
+                            <video controls>
+                                <source src="{% static 'videos/quetegusta.mp4' %}" type="video/mp4">
+                                Tu navegador no soporta la etiqueta de video.
+                            </video>
+                        </li>
                     {% endfor %}
                 </ul>
                 <p>{{ lesson.question }}</p>

@@ -10,15 +10,16 @@
 {% block navlinks %}
     <li><a href="#">Ayuda</a></li>
     <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+    <li><a href="{% url 'manual' %}">Manual</a></li>
     <li><a href="{% url 'profile' %}">Perfil</a></li>
-    <li><a href="{% url 'lessons' %}">Lecciones</a></li>
+    <li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
 {% endblock %}
 
 {% block main %}
 <div class="profile-container">
     <div class="profile-info">
         <div class="profile-overlay">
-            <img src="{% static 'images/perfil.jpg' %}" alt="User Icon" class="profile-pic">
+            <img src="{% static 'images/perfil.jpg' %}" alt="User Icon" class="profile-pic" id="ProfilePic">
             {% if user %}
                 <h1 class="username">{{ user.username }}</h1>
                 <p class="user-email">{{ user.email }}</p>
@@ -31,16 +32,40 @@
         </div>
     </div>
     
-    <div class="achievements">
+    <div class="logros">
         <h2>LOGROS:</h2>
-        <div class="achievements-list">
-            <img src="{% static 'images/lengua.png' %}" alt="Logro 1" class="achievement-icon">
-            <img src="{% static 'images/lengua.png' %}" alt="Logro 2" class="achievement-icon">
-            <img src="{% static 'images/lengua.png' %}" alt="Logro 3" class="achievement-icon">
-            <img src="{% static 'images/lengua.png' %}" alt="Logro 4" class="achievement-icon">
-            <img src="{% static 'images/lengua.png' %}" alt="Logro 5" class="achievement-icon">
-            <img src="{% static 'images/lengua.png' %}" alt="Logro 6" class="achievement-icon">
+        <div class="logro-list">
+            <div class="logro-item">
+                <img src="{% static 'images/user.png' %}" alt="Logro 1" class="logro-icon {% if user.is_authenticated %}full-opacity{% endif %}">
+                <div class="logro-description">Iniciar sesión</div>
+            </div>
+            <div class="logro-item">
+                <img src="{% static 'images/libro.png' %}" alt="Logro 2" class="logro-icon">
+                <div class="logro-description">Descripción del Logro 2</div>
+            </div>
+            <div class="logro-item">
+                <img src="{% static 'images/hand.png' %}" alt="Logro 3" class="logro-icon">
+                <div class="logro-description">Descripción del Logro 3</div>
+            </div>
         </div>
     </div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const logroItems = document.querySelectorAll('.logro-item');
+    
+    logroItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const description = this.querySelector('.logro-description');
+            description.style.display = 'block';
+        });
+    
+        item.addEventListener('mouseleave', function() {
+                const description = this.querySelector('.logro-description');
+                description.style.display = 'none';
+        });
+    });
+});
+</script>
 {% endblock %}
+

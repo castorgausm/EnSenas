@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Manual de Lengua de Señas{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
+{% block navlinks %}
+    <li><a href="#">Ayuda</a></li>
+    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+    <li><a href="{% url 'manual' %}">Manual</a></li>
+    <li><a href="{% url 'profile' %}">Perfil</a></li>
+    <li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
+{% endblock %}
+
+{% block main %}
+<div class="manual-container">
+    <div class="manual-description">
+        <h1>Manual de Lengua de Señas</h1>
+        <p>Bienvenido al manual de lengua de señas. Aquí encontrarás información teórica y cápsulas de video para aprender y mejorar tus habilidades en la lengua de señas.</p>
+    </div>
+
+    <div class="manual-content">
+        <h2>Libro Teórico</h2>
+        <div class="theoretical-book">
+            <p>A continuación, encontrarás el libro teórico para profundizar en el aprendizaje de la lengua de señas.</p>
+            <div class="theorical-content">
+                <h3>Introducción a la Lengua de Señas</h3>
+                <p>La lengua de señas es un lenguaje visual que utiliza gestos, expresiones faciales y movimientos corporales para comunicarse...</p>
+                <p>me gusta el pan</p>
+            </div>
+        </div>
+
+        <h2>Cápsulas de Video</h2>
+        <div class="video-capsules">
+            <div class="video-item">
+                <video controls>
+                    <source src="{% static 'videos/como.mp4' %}" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+                <p>"¿Cómo estás?"</p>
+            </div>
+            <div class="video-item">
+                <video controls>
+                    <source src="{% static 'videos/quetegusta.mp4' %}" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            <p>"¿A tí qué te gusta?"</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
