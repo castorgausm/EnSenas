@@ -184,6 +184,7 @@ main {
 
 .contintro {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 4rem;
 }
@@ -192,6 +193,7 @@ main {
     flex: 0 0 60%;
     margin-right: 10%;
     display: inline-block;
+    text-align: justify;
 }
 
 .imagestart {

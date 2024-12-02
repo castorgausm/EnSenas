@@ -5,12 +5,25 @@
 {% block title %}Inicio{% endblock %}
 
 {% block navlinks %}
-<li><a href="#">Ayuda</a></li>
 <li><a href="{% url 'manual' %}">Manual</a></li>
 <li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
 <li><a href="{% url 'profile' %}" class="purplebutton"><span>Perfil</span></a></li>
 {% endblock %}
 
 {% block main %}
-
+    <div class="contintro">
+        <div class="textstart">
+            <h1>¡Bienvenido {{ user.username }}!</h1>
+            <h5>Comienza explorando el manual y completa tus lecciones para alcanzar nuevos logros y comunicarte de una manera única.</h5>
+            <p>Aprender la lengua de señas es un viaje hacia la inclusión y la conexión. Con cada lección, estarás un paso más cerca de descubrir un nuevo mundo de comunicación sin barreras. ¡Estamos aquí para acompañarte en cada paso!</p>
+            <div class="centertext">
+                <a class="purplebutton" href="{% url 'lessons_list' %}">
+                    <span>Lecciones</span>
+                </a>
+            </div>
+        </div>
+        <div class="imagestart">
+            <img src="{% static 'images/pet.png' %}" alt="Imagen de la mascota">
+        </div>
+    </div>
 {% endblock %}

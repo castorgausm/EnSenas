@@ -4,11 +4,11 @@
 {% block title %}Lección 2{% endblock %}
 
 {% block navlinks %}
-<li><a href="#">Ayuda</a></li>
-<li><a href="{% url 'manual' %}">Manual</a></li>
-<li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
-<li><a href="{% url 'profile' %}" class="purplebutton"><span>Perfil</span></a></li>
-<script src="{% static 'js/lesson_2.js' %}"></script>
+    <li><a href="{% url 'home' %}">Hogar</a></li>
+    <li><a href="{% url 'manual' %}">Manual</a></li>
+    <li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
+    <li><a href="{% url 'profile' %}" class="purplebutton"><span>Perfil</span></a></li>
+    <script src="{% static 'js/lesson_2.js' %}"></script>
 {% endblock %}
 
 {% block main %}
