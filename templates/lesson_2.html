@@ -36,8 +36,48 @@
                     </div>
                     {% endfor %}
                 </ul>
-                <p>{{ lesson.question }}</p>
-                <p>{{ lesson.response }}</p>
+                <!-- <p>{{ lesson.question }}</p> -->
+                <!-- Input for user response -->
+                <!-- <input type="text" id="user-response" placeholder="Escribe tu respuesta"> -->
+                               
+                <!-- Button to submit response -->
+                <!-- <button id="submit-response" data-lesson-id="{{ lesson.id }}">Enviar Respuesta</button> -->
+                
+                <!-- Area to display result -->
+                <div id="response-result"></div>
+               
+                <script>
+                document.getElementById('submit-response').addEventListener('click', function() {
+                    const userResponse = document.getElementById('user-response').value;
+                    const lessonId = this.getAttribute('data-lesson-id');
+               
+                    fetch(`responder/`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': '{{ csrf_token }}'
+                        },
+                        body:JSON.stringify({
+                                           'respuesta': userResponse
+                                       }) 
+                    })
+                    .then(response => response.json())
+                                   .then(data => {
+                                       const resultDiv = document.getElementById('response-result');
+                                       if (data.correct) {
+                                           resultDiv.innerHTML = 'Respuesta Correcta!';
+                                           resultDiv.style.color = 'green';
+                                           window.location.href = `/lecciones/${Number(lessonId) + 1}/`;
+                                       } else {
+                                           resultDiv.innerHTML = 'Respuesta Incorrecta';
+                                           resultDiv.style.color = 'red';
+                                       }
+                                   })
+                                   .catch(error => {
+                                       console.error('Error:', error);
+                                   });
+                });
+                </script>
                 <div class="container">
                     <div class="instructions" id="instructionsContainer">
                     </div>
@@ -53,7 +93,6 @@
             <div class="word" id="word3" draggable="true">lo que</div>
             <div class="word" id="word4" draggable="true">te gusta</div>
         </div>
-        <a href="{% url 'lesson_3' %}" id="accessLesson3Button" class="yellowbutton hide">Lección 3</a>
     </div>
     <audio id="errorSound" src="{% static 'sounds/error-sound.mp3' %}" preload="auto"></audio>
     <audio id="correctSound" src="{% static 'sounds/correct-sound.mp3' %}" preload="auto"></audio>
