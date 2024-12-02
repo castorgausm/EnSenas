@@ -41,11 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (JSON.stringify(correctOrder) === JSON.stringify(currentOrder)) {
             accessLesson3Button.classList.remove('hide');
             document.getElementById('correctSound').play();
-            fetch(`terminar/`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-        }})
+
         } else {
             document.getElementById('errorSound').play();
         }

@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-
+from django.shortcuts import render, get_object_or_404
+from .models import Lesson, Video
 
 from lessons.utils import inscribir_usuario
 
@@ -29,7 +30,10 @@ def lessons_view(request):
     return render(request, 'lessons.html')
 
 def lesson_2(request):
-    return render(request, 'lesson_2.html')
+    lesson_id = 2  
+    lesson = get_object_or_404(Lesson, id=lesson_id)
+    lesson_videos = Video.objects.filter(lesson=lesson)
+    return render(request, 'lesson_2.html', {'lesson': lesson, 'lesson_videos': lesson_videos})
 
 def lesson_3(request):
     return render(request, 'lesson_3.html')

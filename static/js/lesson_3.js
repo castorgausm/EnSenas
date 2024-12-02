@@ -116,14 +116,4 @@ function updateProgress(currentIndex) {
     const progressElement = document.querySelector('.progress');
     const progressPercentage = ((currentIndex) / questions.length) * 100;
     progressElement.style.width = `${progressPercentage}%`;
-    // alert("hola")
-    console.log(progressPercentage)
-    if(progressPercentage == "100"){
-        fetch(`terminar/`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-        }})
-
-    }
 }
