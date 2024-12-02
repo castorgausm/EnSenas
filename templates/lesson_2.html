@@ -8,6 +8,7 @@
 <li><a href="{% url 'manual' %}">Manual</a></li>
 <li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
 <li><a href="{% url 'profile' %}" class="purplebutton"><span>Perfil</span></a></li>
+<script src="{% static 'js/lesson_2.js' %}"></script>
 {% endblock %}
 
 {% block main %}
@@ -52,7 +53,7 @@
             <div class="word" id="word3" draggable="true">lo que</div>
             <div class="word" id="word4" draggable="true">te gusta</div>
         </div>
-        <a href="{% url 'lesson_3' %}" id="accessLesson3Button" class="yellowbutton hide">Acceder a Lección 3</a>
+        <a href="{% url 'lesson_3' %}" id="accessLesson3Button" class="yellowbutton hide">Lección 3</a>
     </div>
     <audio id="errorSound" src="{% static 'sounds/error-sound.mp3' %}" preload="auto"></audio>
     <audio id="correctSound" src="{% static 'sounds/correct-sound.mp3' %}" preload="auto"></audio>

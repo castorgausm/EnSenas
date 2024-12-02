@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const words = document.querySelectorAll('.word');
     const wordContainer = document.getElementById('wordContainer');
+    const accessLesson3Button = document.getElementById('accessLesson3Button');
+    console.log("Botón detectado:", accessLesson3Button);
 
     words.forEach(word => {
         word.addEventListener('dragstart', dragStart);
@@ -30,5 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const id = e.dataTransfer.getData('text');
         const draggable = document.getElementById(id);
         wordContainer.appendChild(draggable);
+        checkCompletion();
+    }
+
+    function checkCompletion() {
+        const correctOrder = ['word1', 'word2', 'word3', 'word4'];
+        const currentOrder = Array.from(wordContainer.children).map(word => word.id);
+        if (JSON.stringify(correctOrder) === JSON.stringify(currentOrder)) {
+            accessLesson3Button.classList.remove('hide');
+            document.getElementById('correctSound').play();
+
+        } else {
+            document.getElementById('errorSound').play();
+        }
     }
 });

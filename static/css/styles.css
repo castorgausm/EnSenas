@@ -504,6 +504,7 @@ footer {
 }
 
 .profile-info {
+    bottom: 20px;
     flex: 1;
     text-align: center;
     padding: 20px;
@@ -537,6 +538,7 @@ footer {
 }
 
 .logros {
+    height: 342px;
     flex: 1;
     border: 2px solid #FFD60A;;
     padding: 20px;
@@ -632,6 +634,7 @@ footer {
     flex-wrap: wrap; 
     justify-content: center; 
     margin-top: 20px; 
+    align-items: center;
 }
 .word {
     height: 25px;
@@ -645,6 +648,10 @@ footer {
     border: 2px solid transparent;
     box-shadow: 0px 5px 0px 0px #814c13;
     transition: border-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    white-space: nowrap;
 }
 
 .word.incorrect {
@@ -686,6 +693,8 @@ footer {
 
 /*acceso lección_3*/
 #accessLesson3Button {
+    height: 30px;
+    width: 150px;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -698,10 +707,17 @@ footer {
     cursor: pointer;
     z-index: 1000;
     display: none; 
+    margin-bottom: 35px;
+    text-align: center; 
+    line-height: 30px;
+}
+
+#accessLesson3Button.show {
+    display: inline-block; 
 }
 
 .show {
-    display: block; 
+    display: inline-block; 
 }
 
 
