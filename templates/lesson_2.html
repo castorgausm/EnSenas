@@ -15,6 +15,8 @@
     <div class="row_five">
         <div class="content">
             <div class="content-main">
+                <h1 class="centertext">Ordena las Palabras</h1>
+                <p>En esta lección, debes ordenar las palabras según lo que se dice en el video. Arrastra y suelta las palabras dentro del contenedor morado en el orden correcto para completar la lección.</p>
                 <ul>
                     <div class="video-capsules">
                         <div class="video-item">
@@ -36,8 +38,6 @@
                     </div>
                     {% endfor %}
                 </ul>
-                <p>{{ lesson.question }}</p>
-                <p>{{ lesson.response }}</p>
                 <div class="container">
                     <div class="instructions" id="instructionsContainer">
                     </div>
@@ -48,10 +48,10 @@
     </div>
     <div class="footer-container">
         <div class="word-container" id="wordContainer">
-            <div class="word" id="word1" draggable="true">A tí</div>
-            <div class="word" id="word2" draggable="true">qué es</div>
+            <div class="word" id="word2" draggable="true">¿qué es</div>
             <div class="word" id="word3" draggable="true">lo que</div>
-            <div class="word" id="word4" draggable="true">te gusta</div>
+            <div class="word" id="word4" draggable="true">te gusta?</div>
+            <div class="word" id="word1" draggable="true">A tí,</div>
         </div>
         <a href="{% url 'lesson_3' %}" id="accessLesson3Button" class="yellowbutton hide">Lección 3</a>
     </div>
