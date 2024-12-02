@@ -3,16 +3,10 @@
 
 {% block title %}Manual de Lengua de Señas{% endblock %}
 
-{% block head %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-{% endblock %}
-
 {% block navlinks %}
     <li><a href="#">Ayuda</a></li>
-    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
-    <li><a href="{% url 'manual' %}">Manual</a></li>
-    <li><a href="{% url 'profile' %}">Perfil</a></li>
     <li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
+    <li><a href="{% url 'profile' %}" class="purplebutton"><pan>Perfil</pan></a></li>
 {% endblock %}
 
 {% block main %}

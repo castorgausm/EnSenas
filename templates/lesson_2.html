@@ -3,17 +3,11 @@
 
 {% block title %}Lección 2{% endblock %}
 
-{% block head %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-{% endblock %}
-
 {% block navlinks %}
-    <li><a href="#">Ayuda</a></li>
-    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
-    <li><a href="{% url 'manual' %}">Manual</a></li>
-    <li><a href="{% url 'profile' %}">Perfil</a></li>
-    <li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
-    <script src="{% static 'js/lesson_2.js' %}"></script>
+<li><a href="#">Ayuda</a></li>
+<li><a href="{% url 'manual' %}">Manual</a></li>
+<li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
+<li><a href="{% url 'profile' %}" class="purplebutton"><span>Perfil</span></a></li>
 {% endblock %}
 
 {% block main %}

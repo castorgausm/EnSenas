@@ -1,7 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --orangees: #EA5A0C;
+    --yellowes: #FFD60A;
+    --purplees: #7209B7;
+}
 
 body {
-    font-family: "Lato", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 h1 {
@@ -135,16 +141,19 @@ img {
 }
 
 header {
-    padding: 1rem 16rem 1rem;
+    padding: 1rem 16rem;
     background-image: linear-gradient(to right,#FFD60A, #EA5A0C);
     background-size: 200% 100%;
     animation: gradientmove 8s linear infinite;
+    display: flex;
+    align-items: center;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .navlogo img{
@@ -155,9 +164,18 @@ header {
     padding-bottom: 0;
 }
 
+.navlinks {
+    display: flex;
+    align-items: center;
+}
+
 .navlinks li {
     display: inline-block;
     padding-left: 4rem;
+}
+
+.navlinks .purplebutton {
+    padding: 1rem 3rem 1rem;
 }
 
 main {
@@ -415,14 +433,15 @@ footer {
 .lessons-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    height: 13rem;
     gap: 20px;
-    max-width: 800px;
 }
 
 .lesson {
     background-color: #fff;
-    border: 1px solid #58054d;
-    border-radius: 8px;
+    border: 3px solid var(--purplees);
+    border-radius: 2rem;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -494,7 +513,7 @@ footer {
 .profile-overlay {
     position: relative;
     background-color: rgba(114, 9, 183, 0.8); 
-    padding: 20px;
+    padding: 2rem;
     border-radius: 8px;
     color: white; 
     z-index: 1;
@@ -505,8 +524,6 @@ footer {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 3px solid white; 
-    margin-bottom: 20px;
     transition: all 300ms;
     z-index: 2;
 }
@@ -582,15 +599,16 @@ footer {
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    border-radius: 8px;
+    border-radius: 2rem;
 }
+
 .instructions {
     background-color:  rgba(153, 0, 153, 0.81);
     color: white;
     padding: 10px;
     margin-bottom: 20px;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 2rem;
     display: flex;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
     width: 370px;
@@ -623,7 +641,7 @@ footer {
     margin: 5px;
     cursor: pointer;
     user-select: none;
-    border-radius: 20px;
+    border-radius: 2rem;
     border: 2px solid transparent;
     box-shadow: 0px 5px 0px 0px #814c13;
     transition: border-color 0.3s ease, transform 0.3s ease;
@@ -753,4 +771,84 @@ footer {
     border: 2px solid #FFD60A; 
     border-radius: 5px; 
     background-color: #f9f9f9; 
+}
+
+/*lesson 3*/
+
+#titleabc {
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e5e7eb;
+    border-radius: 10rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    height: 24px;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: var(--purplees);
+    transition: width 0.5s ease;
+}
+
+.options-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.option {
+    width: 200px;
+    height: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #ffffff;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.option:hover {
+    transform: scale(1.05);
+}
+
+.option img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.option button {
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option button:hover {
+    background-color: #2563eb;
+}
+
+#result {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+}
+
+.text-green {
+    color: #10b981;
+}
+
+.text-red {
+    color: #ef4444;
 }

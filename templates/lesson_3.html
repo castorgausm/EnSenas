@@ -3,24 +3,28 @@
 
 {% block title %}Lección 3{% endblock %}
 
-{% block head %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-{% endblock %}
-
 {% block navlinks %}
-    <li><a href="#">Ayuda</a></li>
-    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
-    <li><a href="{% url 'manual' %}">Manual</a></li>
-    <li><a href="{% url 'profile' %}">Perfil</a></li>
-    <li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
+<li><a href="#">Ayuda</a></li>
+<li><a href="{% url 'manual' %}">Manual</a></li>
+<li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
+<li><a href="{% url 'profile' %}" class="purplebutton"><span>Perfil</span></a></li>
 {% endblock %}
 
 {% block main %}
     <div class="row_five">
         <div class="content">
             <div class="content-main">
-                <h1>Bienvenido a la Lección 3</h1>
+                <h1 id="titleabc">Abecedario</h1>
+                <div class="container">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <h3 id="question"></h1>
+                    <div id="options-container" class="options-container"></div>
+                    <div id="result"></div>
+                </div>
             </div>
         </div>
     </div>
+    <script src="{% static 'js/lesson_3.js' %}"></script>
 {% endblock %}
