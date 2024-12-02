@@ -13,6 +13,10 @@ class Lesson(models.Model):
     response = models.CharField(max_length=200, null=True)
 
 
+    def __str__(self):
+        return f"leccion {self.number}"
+
+
 class LessonUser(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
