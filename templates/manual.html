@@ -48,6 +48,10 @@
             <p class="boxwhite">"A tí, ¿qué es lo que te gusta?"</p>
             </div>
         </div>
+        <div class="final-message">
+            <p>Ahora que has completado leer y revisar las cápsulas, es hora de poner en práctica lo aprendido.</p>
+            <a href="{% url 'lessons_list' %}" class="purplebutton">Ir a las lecciones</a>
+        </div>
     </div>
 </div>
 <style>
@@ -63,6 +67,11 @@
     text-align: center;
     margin-top: 100px;
     }
+    .final-message {
+    text-align: center; 
+    margin-top: 20px; 
+    }
+
   
 </style>
 {% endblock %}
