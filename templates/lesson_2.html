@@ -15,13 +15,24 @@
         <div class="content">
             <div class="content-main">
                 <ul>
-                    {% for video in lesson_videos %}
-                        <li>
+                    <div class="video-capsules">
+                        <div class="video-item">
                             <video controls>
                                 <source src="{% static 'videos/quetegusta.mp4' %}" type="video/mp4">
                                 Tu navegador no soporta la etiqueta de video.
                             </video>
-                        </li>
+                        </div>
+                    </div>
+                    {% for video in lesson_videos %}
+                    <div class="video-capsules">
+                        <div class="video-item">
+                            <video controls>
+                                <source src="{{ video.url }}" type="video/mp4">
+                                Tu navegador no soporta la etiqueta de video.
+                            </video>
+                            <p>{{ video.lesson.title }}</p>
+                        </div>
+                    </div>
                     {% endfor %}
                 </ul>
                 <p>{{ lesson.question }}</p>
@@ -36,10 +47,10 @@
     </div>
     <div class="footer-container">
         <div class="word-container" id="wordContainer">
-            <div class="word" id="word1" draggable="true">Palabra1</div>
-            <div class="word" id="word2" draggable="true">Palabra2</div>
-            <div class="word" id="word3" draggable="true">Palabra3</div>
-            <div class="word" id="word4" draggable="true">Palabra4</div>
+            <div class="word" id="word1" draggable="true">A tí</div>
+            <div class="word" id="word2" draggable="true">qué es</div>
+            <div class="word" id="word3" draggable="true">lo que</div>
+            <div class="word" id="word4" draggable="true">te gusta</div>
         </div>
         <a href="{% url 'lesson_3' %}" id="accessLesson3Button" class="yellowbutton hide">Acceder a Lección 3</a>
     </div>
