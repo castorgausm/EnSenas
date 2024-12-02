@@ -4,10 +4,10 @@
 {% block title %}Lección 3{% endblock %}
 
 {% block navlinks %}
-<li><a href="#">Ayuda</a></li>
-<li><a href="{% url 'manual' %}">Manual</a></li>
-<li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
-<li><a href="{% url 'profile' %}" class="purplebutton"><span>Perfil</span></a></li>
+    <li><a href="{% url 'home' %}">Hogar</a></li>
+    <li><a href="{% url 'manual' %}">Manual</a></li>
+    <li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
+    <li><a href="{% url 'profile' %}" class="purplebutton"><span>Perfil</span></a></li>
 {% endblock %}
 
 {% block main %}

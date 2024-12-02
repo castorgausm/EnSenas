@@ -4,7 +4,7 @@
 {% block title %}Perfil de Usuario{% endblock %}
 
 {% block navlinks %}
-    <li><a href="#">Ayuda</a></li>
+    <li><a href="{% url 'home' %}">Hogar</a></li>
     <li><a href="{% url 'manual' %}">Manual</a></li>
     <li><a href="{% url 'lessons_list' %}" class="purplebutton"><span>Lecciones</span></a></li>
 {% endblock %}
