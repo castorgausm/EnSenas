@@ -657,11 +657,17 @@ footer {
 }
 
 .word.incorrect {
+    background-color: red;
+    animation: shake 0.5s;
+}
+
+.shake {
     animation: shake 0.5s;
 }
 
 .word.correct {
     border-color: green;
+    background-color: rgb(16, 236, 16);
 }
 
 /*js revisar*/
@@ -722,11 +728,36 @@ footer {
     display: inline-block; 
 }
 
+.access-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FFD60A;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.access-button.show {
+    display: block;
+}
+
 
 .terminada{
     border-color:green;
     text-decoration-color: green;
     
+}
+
+.congratulations {
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
 /*manual*/

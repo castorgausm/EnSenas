@@ -1,16 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     const words = document.querySelectorAll('.word');
     const wordContainer = document.getElementById('wordContainer');
-    const accessLesson3Button = document.getElementById('accessLesson3Button');
-    console.log("Botón detectado:", accessLesson3Button);
+    const accessLesson3Button = document.getElementById('accessLesson3Button'); 
+    const instructionsContainer = document.getElementById('instructionsContainer');
+    const checkOrderButton = document.getElementById('checkOrderButton');
+    const footerContainer = document.querySelector('.footer-container');
+    const errorSound = document.getElementById('errorSound');
+    const correctSound = document.getElementById('correctSound'); 
 
     words.forEach(word => {
         word.addEventListener('dragstart', dragStart);
         word.addEventListener('dragend', dragEnd);
     });
 
-    wordContainer.addEventListener('dragover', dragOver);
-    wordContainer.addEventListener('drop', drop);
+    instructionsContainer.addEventListener('dragover', dragOver);
+    instructionsContainer.addEventListener('drop', drop);
+
+    checkOrderButton.addEventListener('click', checkCompletion);
 
     function dragStart(e) {
         e.dataTransfer.setData('text/plain', e.target.id);
@@ -31,23 +37,57 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const id = e.dataTransfer.getData('text');
         const draggable = document.getElementById(id);
-        wordContainer.appendChild(draggable);
-        checkCompletion();
+        instructionsContainer.appendChild(draggable);
     }
 
     function checkCompletion() {
         const correctOrder = ['word1', 'word2', 'word3', 'word4'];
-        const currentOrder = Array.from(wordContainer.children).map(word => word.id);
+        const currentOrder = Array.from(instructionsContainer.children).map(word => word.id);
+
         if (JSON.stringify(correctOrder) === JSON.stringify(currentOrder)) {
-            accessLesson3Button.classList.remove('hide');
-            document.getElementById('correctSound').play();
+            instructionsContainer.querySelectorAll('.word').forEach(word => {
+                word.classList.add('correct');
+                word.classList.remove('incorrect');
+                word.setAttribute('draggable', 'false');
+            });
+
+            if (accessLesson3Button) {
+                accessLesson3Button.classList.add('show');
+            }
+
+            checkOrderButton.disabled = true;
+
+            correctSound.play();
+
+            const congratsMessage = document.createElement('p');
+            congratsMessage.classList.add('congratulations');
+            congratsMessage.textContent = '¡Felicitaciones! Has completado la lección correctamente.';
+            footerContainer.appendChild(congratsMessage);
+
             fetch(`terminar/`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-        }})
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }).catch(err => console.error('Error al notificar la finalización:', err));
         } else {
-            document.getElementById('errorSound').play();
+            instructionsContainer.classList.add('shake');
+            instructionsContainer.querySelectorAll('.word').forEach(word => {
+                word.classList.add('incorrect');
+                word.classList.remove('correct');
+            });
+
+            errorSound.play();
+
+            setTimeout(() => {
+                instructionsContainer.classList.remove('shake');
+                instructionsContainer.querySelectorAll('.word').forEach(word => {
+                    word.classList.remove('incorrect');
+                });
+                while (instructionsContainer.firstChild) {
+                    wordContainer.appendChild(instructionsContainer.firstChild);
+                }
+            }, 1000);
         }
     }
 });
