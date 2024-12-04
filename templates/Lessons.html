@@ -4,98 +4,124 @@
 {% block title %}Lecciones{% endblock %}
 
 {% block navlinks %}
-    <li><a href="{% url 'home' %}">Hogar</a></li>
-    <li><a href="{% url 'manual' %}">Manual</a></li>
-    <li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
-    <li><a href="{% url 'profile' %}" class="purplebutton"><span>Perfil</span></a></li>
+<li><a href="{% url 'home' %}">Hogar</a></li>
+<li><a href="{% url 'manual' %}">Manual</a></li>
+<li><a href="{% url 'lessons_list' %}">Lecciones</a></li>
+<li><a href="{% url 'profile' %}" class="purplebutton"><span>Perfil</span></a></li>
 {% endblock %}
 
 {% block main %}
-    <div class="row_five">
-        <div class="content">
-            <div class="content-main">
-                <div class="content-lessons">
-                    <h1 class="heading-title">Lecciones:</h1>
-                    <div class="lessons-container">
-                        {% for lesson in lessons %}
-                            <div class="lesson">
-                                <h3>LECCIÓN {{lesson.lesson.number}}</h3>
-                                {% if lesson.finished %}
-                                    <button class="terminada"><a href="{% url 'lesson_detail' number=lesson.lesson.number %}">Terminada</a></button>
-                                {% else %}
-                                    <button class="lesson active"><a href="{% url 'lesson_detail' number=lesson.lesson.number %}">Ir</a></button>
-                                {% endif %}
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
+<div class="row">
+    <div class="content">
+        <h1 class="heading-title">Lecciones:</h1>
+        <div class="lessons-container">
+            {% for lesson in lessons %}
+            <div class="lesson">
+                <h3>LECCIÓN {{ lesson.lesson.number }}</h3>
+                {% if lesson.finished %}
+                <button class="lesson-finished">
+                    <a href="{% url 'lesson_detail' number=lesson.lesson.number %}">Terminada</a>
+                </button>
+                {% else %}
+                <button class="lesson-active">
+                    <a href="{% url 'lesson_detail' number=lesson.lesson.number %}">Ir</a>
+                </button>
+                {% endif %}
             </div>
+            {% endfor %}
         </div>
     </div>
+</div>
 
-    <style>
-        .row_five {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .content {
-            width: 100%;
-            max-width: 1200px;
-        }
-        .content-main {
-            background: #f9f9f9; 
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .content-lessons {
-            text-align: center;
-        }
+<style>
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: #f9f9f9;
+        flex-wrap: wrap;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .heading-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .lessons-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .lesson {
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .lesson h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333333;
+    }
+
+    .lesson button {
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        background-color: #ffa500;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .lesson button a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .lesson button:hover {
+        background-color: #ff8c00;
+    }
+
+
+    .lesson-finished {
+        background-color: #32cd32; 
+    }
+
+    .lesson-finished:hover {
+        background-color: #2eb82e;
+    }
+
+    .lesson-finished a {
+        color: white;
+    }
+
+
+    @media (max-width: 768px) {
         .heading-title {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 20px;
         }
-        .lessons-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+
         .lesson {
-            background: #fff; 
-            border-radius: 8px;
-            padding: 20px;
-            margin: 10px;
-            width: 180px; 
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            padding: 15px;
         }
-        .lesson h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
+
         .lesson button {
-            padding: 8px 16px; 
-            background-color: #FFA500; 
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            font-size: 12px;
         }
-        .lesson button a {
-            color: white;
-            text-decoration: none;
-        }
-        .lesson button:hover {
-            background-color: #FF8C00; 
-        }
-        .terminada {
-            background-color: #FFD700; 
-        }
-        .terminada a {
-            color: #333;
-        }
-    </style>
+    }
+</style>
 {% endblock %}
